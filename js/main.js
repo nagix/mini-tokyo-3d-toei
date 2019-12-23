@@ -804,7 +804,7 @@ map.once('styledata', function () {
 		eventHandler: function() {
 			isRealtime = !isRealtime;
 			this.title = dict[(isRealtime ? 'exit' : 'enter') + '-realtime'];
-			stopAllTrains();
+			stopAll();
 			trackedObject = undefined;
 			popup.remove();
 			stopViewAnimation();
@@ -994,23 +994,17 @@ map.once('styledata', function () {
 
 				// Remove all trains if the page has been invisible for more than ten seconds
 				if (now - lastFrameRefresh >= 10000) {
-					stopAllTrains();
+					stopAll();
 				}
 				lastFrameRefresh = now;
 
 				if (Math.floor((now - MIN_DELAY) / TRAIN_REFRESH_INTERVAL) !== Math.floor(lastTrainRefresh / TRAIN_REFRESH_INTERVAL)) {
-					refreshTrains();
-					refreshFlights();
 					loadRealtimeTrainData();
 					loadRealtimeFlightData();
 					refreshStyleColors();
-					setInterval(function() {
-						refreshDelayMarkers();
-					}, 500);
 					lastTrainRefresh = now - MIN_DELAY;
 				}
 				if (Math.floor(now / BUS_REFRESH_INTERVAL) !== Math.floor(lastBusRefresh / BUS_REFRESH_INTERVAL)) {
-					refreshBuses();
 					loadRealtimeBusData();
 					lastBusRefresh = now;
 				}
@@ -1686,14 +1680,17 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		delete activeBusLookup[bus.id];
 	}
 
-	function stopAllTrains() {
+	function stopAll() {
 		Object.keys(activeTrainLookup).forEach(function(key) {
 			stopTrain(activeTrainLookup[key]);
 		});
 		Object.keys(activeFlightLookup).forEach(function(key) {
 			stopFlight(activeFlightLookup[key]);
 		});
-		lastTrainRefresh = undefined;
+		Object.keys(activeBusLookup).forEach(function(key) {
+			stopBus(activeBusLookup[key]);
+		});
+		lastTrainRefresh = lastBusRefresh = undefined;
 	}
 
 	function loadTimetableData() {
@@ -1779,7 +1776,10 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			});
 
 			refreshTrains();
+			refreshDelayMarkers();
 			updateAboutPopup();
+		}).catch(function() {
+			refreshTrains();
 		});
 	}
 
@@ -1912,6 +1912,8 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 			});
 
 			refreshFlights();
+		}).catch(function() {
+			refreshFlights();
 		});
 	}
 
@@ -1951,6 +1953,8 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 			refreshBuses();
 			updateAboutPopup();
+		}).catch(function() {
+			refreshBuses();
 		});
 	}
 
