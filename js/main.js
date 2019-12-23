@@ -79,6 +79,8 @@ var OPERATORS_FOR_FLIGHTINFORMATION = [
 	'NAA'
 ];
 
+var FUEL_CELL_BUSES = ['C103', 'C104', 'C105', 'D106', 'D107', 'D108', 'D109', 'D110', 'D111', 'D112', 'D113', 'D114', 'D115', 'D116', 'D117'];
+
 var SQRT3 = Math.sqrt(3);
 var DEGREE_TO_RADIAN = Math.PI / 180;
 var MEAN_EARTH_RADIUS = 6371008.8;
@@ -1437,13 +1439,15 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 		busQueue.forEach(function(bus) {
 			function start(index) {
 				var now = Date.now();
+				var color;
 
 				if (!setBusSectionData(bus)) {
 					return;
 				}
 
 				activeBusLookup[bus.id] = bus;
-				bus.car = createCube(.88, 1.76, .88, '#9FC105');
+				color = bus.fcv ? '#0099FF' : operatorLookup['Toei'].color;
+				bus.car = createCube(.88, 1.76, .88, color);
 				bus.car.rotation.order = 'ZYX';
 				bus.car.userData.object = bus;
 
@@ -1637,10 +1641,11 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 
 		bus.standing = standing;
 		bus.description =
-			'<span class="desc-box" style="background-color: #9FC105;"></span> ' +
+			'<span class="desc-box" style="background-color: ' + operatorLookup['Toei'].color + ';"></span> ' +
 			'<strong>' + getLocalizedOperatorTitle('Toei') + '</strong>' +
 			'<br>' + getLocalizedBusroutePatternTitle(bus.busroutePattern) +
 			'<br><strong>' + dict['bus-number'] + ':</strong> ' + bus.busNumber +
+			(bus.fcv ? ' <span class="desc-fcv">燃料電池車</span>' : '') +
 			(bus.fromBusstopPole ?
 				'<br><strong>' + dict['previous-busstop'] + ':</strong> ' + getLocalizedBusstopPoleTitle(bus.fromBusstopPole) +
 			' ' + bus.fromBusstopPoleTime.replace(/.*(\d\d:\d\d:\d\d).*/, '$1') : '') +
@@ -1936,7 +1941,8 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 						toBusstopPole: toBusstopPole,
 						fromBusstopPole: fromBusstopPole,
 						fromBusstopPoleTime: fromBusstopPoleTime,
-						feature: feature
+						feature: feature,
+						fcv: FUEL_CELL_BUSES.indexOf(busNumber) !== -1
 					};
 					busQueue.push(activeBus);
 				}
