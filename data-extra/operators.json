@@ -1,0 +1,26 @@
+[{
+	"id": "Toei",
+	"title": {
+		"ja": "都営バス",
+		"en": "Toei Bus",
+		"ko": "도영 버스",
+		"zh": "都营巴士"
+	},
+	"color": "#9FC105"
+}, {
+	"id": "ANA",
+	"title": {
+		"ko": "전일본공수",
+		"zh": "全日空航空"
+	},
+	"color": "#FFFFFF",
+	"tailcolor": "#101084"
+}, {
+	"id": "JAL",
+	"title": {
+		"ko": "일본항공",
+		"zh": "日本航空"
+	},
+	"color": "#FFFFFF",
+	"tailcolor": "#C80019"
+}]

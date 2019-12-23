@@ -1,0 +1,52 @@
+[{
+	"id": "Toei.Asakusa",
+	"title": {
+		"ko": "아사쿠사 선",
+		"zh": "浅草线"
+	},
+	"altitude": -1,
+	"color": "#DC435F",
+	"carComposition": 8
+}, {
+	"id": "Toei.Mita",
+	"title": {
+		"ko": "미타 선",
+		"zh": "三田线"
+	},
+	"altitude": -1,
+	"color": "#006AB8",
+	"carComposition": 6
+}, {
+	"id": "Toei.Shinjuku",
+	"title": {
+		"ko": "신주쿠 선",
+		"zh": "新宿线"
+	},
+	"altitude": -1,
+	"color": "#B0BF1E",
+	"carComposition": 10
+}, {
+	"id": "Toei.Oedo",
+	"title": {
+		"ko": "오에도 선",
+		"zh": "大江户线"
+	},
+	"stations": {
+		"index": 28,
+		"delete": 1,
+		"insert": [
+			"Toei.Oedo.Tochomae.1"
+		]
+	},
+	"altitude": -1,
+	"color": "#CE045B",
+	"carComposition": 8
+}, {
+	"id": "Toei.NipporiToneri",
+	"title": {
+		"ko": "닛포리·도네리 라이너",
+		"zh": "日暮里-舍人线"
+	},
+	"color": "#227324",
+	"carComposition": 5
+}]

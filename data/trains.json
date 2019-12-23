@@ -1,0 +1,127 @@
+[{
+	"r": "Toei.Asakusa",
+	"direction": 1,
+	"sectionIndex": 0,
+	"altitude": -1
+}, {
+	"r": "Toei.Asakusa",
+	"direction": 1,
+	"sectionIndex": 10,
+	"altitude": -1
+}, {
+	"r": "Toei.Asakusa",
+	"direction": -1,
+	"sectionIndex": 19,
+	"altitude": -1
+}, {
+	"r": "Toei.Asakusa",
+	"direction": -1,
+	"sectionIndex": 9,
+	"altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"direction": 1,
+	"sectionIndex": 0,
+	"altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"direction": 1,
+	"sectionIndex": 9,
+	"altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"direction": 1,
+	"sectionIndex": 18,
+	"altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"direction": -1,
+	"sectionIndex": 26,
+	"altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"direction": 1,
+	"sectionIndex": 17,
+	"altitude": -1
+}, {
+	"r": "Toei.Mita",
+	"direction": -1,
+	"sectionIndex": 8,
+	"altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"direction": 1,
+	"sectionIndex": 0,
+	"altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"direction": 1,
+	"sectionIndex": 10,
+	"altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"direction": -1,
+	"sectionIndex": 20,
+	"altitude": -1
+}, {
+	"r": "Toei.Shinjuku",
+	"direction": 1,
+	"sectionIndex": 10,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": 1,
+	"sectionIndex": 0,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": 1,
+	"sectionIndex": 9,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": 1,
+	"sectionIndex": 19,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": 1,
+	"sectionIndex": 28,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": -1,
+	"sectionIndex": 38,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": -1,
+	"sectionIndex": 29,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": -1,
+	"sectionIndex": 19,
+	"altitude": -1
+}, {
+	"r": "Toei.Oedo",
+	"direction": -1,
+	"sectionIndex": 10,
+	"altitude": -1
+}, {
+	"r": "Toei.NipporiToneri",
+	"direction": 1,
+	"sectionIndex": 0
+}, {
+	"r": "Toei.NipporiToneri",
+	"direction": 1,
+	"sectionIndex": 6
+}, {
+	"r": "Toei.NipporiToneri",
+	"direction": -1,
+	"sectionIndex": 12
+}, {
+	"r": "Toei.NipporiToneri",
+	"direction": -1,
+	"sectionIndex": 6
+}]

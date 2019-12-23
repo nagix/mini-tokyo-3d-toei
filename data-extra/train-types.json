@@ -1,0 +1,49 @@
+[{
+	"id": "Toei.AccessExpress",
+	"title": {
+		"ko": "엑세스특급",
+		"zh": "Access特急"
+	}
+}, {
+	"id": "Toei.AirportRapidLimitedExpress",
+	"title": {
+		"ko": "에어포트 쾌속특급",
+		"zh": "机场快特"
+	}
+}, {
+	"id": "Toei.CommuterLimitedExpress",
+	"title": {
+		"ko": "통근특급",
+		"zh": "通勤特急"
+	}
+}, {
+	"id": "Toei.Express",
+	"title": {
+		"ko": "급행",
+		"zh": "急行"
+	}
+}, {
+	"id": "Toei.LimitedExpress",
+	"title": {
+		"ko": "특급",
+		"zh": "特急"
+	}
+}, {
+	"id": "Toei.Local",
+	"title": {
+		"ko": "보통",
+		"zh": "普通"
+	}
+}, {
+	"id": "Toei.RapidLimitedExpress",
+	"title": {
+		"ko": "쾌속특급",
+		"zh": "快特"
+	}
+}, {
+	"id": "Toei.Rapid",
+	"title": {
+		"ko": "쾌속",
+		"zh": "快速"
+	}
+}]
