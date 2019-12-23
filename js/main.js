@@ -1244,9 +1244,6 @@ map.once('styledata', function () {
 		coord = userData.coord = p.coord;
 		userData.altitude = p.altitude;
 		bearing = userData.bearing = p.bearing;
-if (isNaN(coord[0]) || isNaN(coord[1])) {
-	console.log(bus);
-}
 		mCoord = mapboxgl.MercatorCoordinate.fromLngLat(coord);
 
 		position.x = mCoord.x - modelOrigin.x;
@@ -1459,7 +1456,12 @@ if (isNaN(coord[0]) || isNaN(coord[1])) {
 					final = true;
 				}
 
-				if (bus.sectionLength > 0) {
+				// Sometimes bus.interval becomes 0 because the busroute coordinates
+				// are incorrect and a few busstops shares the same coordinates.
+if (bus.interval === 0) {
+	console.log(bus.id, bus.fromBusstopPole, bus.toBusstopPole, bus.sectionIndex, bus.sectionLength, bus.feature.properties['busstop-offsets']);
+}
+				if (bus.sectionLength > 0 && bus.interval > 0) {
 					repeat();
 				} else {
 					setBusStandingStatus(bus, true);

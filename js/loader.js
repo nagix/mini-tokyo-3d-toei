@@ -231,6 +231,18 @@ stationGroupData = stationGroupData.concat(nonTransitStations.map(function(stati
 	return [[station]];
 }));
 
+// Build bus route pattern data
+busrouteLookup = buildLookup(busroutePatternRefData);
+busroutePatternData.forEach(function(busroute) {
+	var busrouteRef = busrouteLookup[busroute.id];
+	var coords = busroute.coords;
+
+	if (coords) {
+		busrouteRef.coords = coords;
+	}
+	merge(busrouteRef.title, busroute.title);
+});
+
 // Build busstop data
 busstopLookup = buildLookup(busstopPoleRefData);
 busstopPoleData.forEach(function(busstop) {
@@ -543,8 +555,14 @@ busroutePatternRefData.filter(function(busroute) {
 	});
 
 	// Set busstop offsets
-	busrouteFeature.properties['busstop-offsets'] = busroute.busstops.map(function(busstop) {
-		return getLocationAlongLine(busrouteFeature, busstopLookup[busstop].coord);
+	busrouteFeature.properties['busstop-offsets'] = busroute.busstops.map(function(busstop, i, busstops) {
+		// If the line has a loop, the last offset must be set explicitly
+		// Otherwise, the location of the last busstop goes wrong
+		// Also, the busstop offsets are sometimes not continuously increased.
+		// This needs to be addressed by using lineSlice() to only use the way to proceed.
+		return busroute.loop && i === busstops.length - 1 ?
+			turf.length(busrouteFeature) :
+			getLocationAlongLine(busrouteFeature, busstopLookup[busstop].coord);
 	});
 
 	railwayFeatureArray.push(busrouteFeature);
@@ -654,12 +672,6 @@ airportData.forEach(function(airport) {
 flightStatusLookup = buildLookup(flightStatusRefData);
 flightStatusData.forEach(function(status) {
 	merge(flightStatusLookup[status.id].title, status.title);
-});
-
-// Build bus route pattern data
-busrouteLookup = buildLookup(busroutePatternRefData);
-busroutePatternData.forEach(function(busroute) {
-	merge(busrouteLookup[busroute.id].title, busroute.title);
 });
 
 map.once('load', function () {
