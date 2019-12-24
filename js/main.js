@@ -1458,7 +1458,7 @@ map.once('styledata', function () {
 
 				// Sometimes bus.interval becomes 0 because the busroute coordinates
 				// are incorrect and a few busstops shares the same coordinates.
-if (bus.interval === 0) {
+if (bus.sectionLength > 0 && bus.interval === 0) {
 	console.log(bus.id, bus.fromBusstopPole, bus.toBusstopPole, bus.sectionIndex, bus.sectionLength, bus.feature.properties['busstop-offsets']);
 }
 				if (bus.sectionLength > 0 && bus.interval > 0) {

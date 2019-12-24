@@ -1281,7 +1281,7 @@ function loadBusroutePatternRefData() {
 }
 
 function loadBusstopPoleRefData() {
-	return loadJSON('data-extra/BusstopPoles.json').then(function(data) {
+	return loadJSON('data/BusstopPole.json').then(function(data) {
 		return data.filter(function(busstop) {
 			var operators = busstop['odpt:operator'];
 			return operators.indexOf('odpt.Operator:Toei') !== -1;
