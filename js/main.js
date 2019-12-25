@@ -118,7 +118,7 @@ var activeBusLookup = {};
 var realtimeBusLookup = {};
 var busQueue = [];
 var animationID = 0;
-var lastStaticUpdate = '2019-12-16 10:00:00';
+var lastStaticUpdate = '2019-12-24 03:03:32';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, busroutePatternLookup, busstopPoleLookup, a;
 var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastBusRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
@@ -1805,12 +1805,8 @@ if (bus.sectionLength > 0 && bus.interval === 0) {
 
 	function loadRealtimeFlightData() {
 		Promise.all([
-			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:operator=' + OPERATORS_FOR_FLIGHTINFORMATION.map(function(operator) {
-				return 'odpt.Operator:' + operator;
-			}).join(',')),
-			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:operator=' + OPERATORS_FOR_FLIGHTINFORMATION.map(function(operator) {
-				return 'odpt.Operator:' + operator;
-			}).join(','))
+			loadJSON(API_URL + 'odpt:FlightInformationArrival?odpt:arrivalAirport=odpt.Airport:NRT,odpt.Airport:HND'),
+			loadJSON(API_URL + 'odpt:FlightInformationDeparture?odpt:departureAirport=odpt.Airport:NRT,odpt.Airport:HND')
 		]).then(function(flightRefData) {
 			var flightQueue = {};
 
@@ -2146,9 +2142,8 @@ if (bus.sectionLength > 0 && bus.interval === 0) {
 			'<label class="acd-label" for="acd-dynamic">' + dict['dynamic-update'] + '</label>' +
 			'<div class="acd-content">' +
 			(lastDynamicUpdate['Toei'] || 'N/A') + ' (' + dict['toei'] + ')<br>' +
-			(lastDynamicUpdate['HND-JAT'] || 'N/A') + ' (' + dict['hnd-jat'] + ')<br>' +
-			(lastDynamicUpdate['HND-TIAT'] || 'N/A') + ' (' + dict['hnd-tiat'] + ')<br>' +
-			(lastDynamicUpdate['NAA'] || 'N/A') + ' (' + dict['naa'] + ')</div>';
+			(lastDynamicUpdate['JAL'] || 'N/A') + ' (' + dict['jal'] + ')<br>' +
+			(lastDynamicUpdate['ANA'] || 'N/A') + ' (' + dict['ana'] + ')</div>';
 
 		aboutPopup.setLngLat(map.unproject([r.left - 5, r.top + 15])).setHTML(html);
 	}

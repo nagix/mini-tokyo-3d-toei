@@ -43,7 +43,6 @@
 	"static-update": "Latest update on static data",
 	"dynamic-update": "Latest update on dynamic data",
 	"toei": "Metropolitan Gov't",
-	"hnd-jat": "Japan Airport Terminal",
-	"hnd-tiat": "Tokyo Int'l Air Terminal",
-	"naa": "Narita Int'l Airport"
+	"jal": "Japan Airlines",
+	"ana": "All Nippon Airways"
 }
