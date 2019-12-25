@@ -1442,8 +1442,12 @@ map.once('styledata', function () {
 				bus.car.rotation.order = 'ZYX';
 				bus.car.userData.object = bus;
 
-				updateBusProps(bus);
-				repeat();
+				if (bus.sectionLength > 0) {
+					updateBusProps(bus);
+					repeat();
+				} else {
+					stand();
+				}
 			}
 
 			function stand() {
@@ -2670,9 +2674,32 @@ function setSectionData(train, index) {
 function setBusSectionData(bus, final) {
 	var busstops = busroutePatternLookup[bus.busroutePattern].busstops;
 	var currentSection = busstops.indexOf(bus.fromBusstopPole || bus.toBusstopPole);
-	var nextSection = busstops.indexOf(bus.toBusstopPole || bus.fromBusstopPole, currentSection);
-	var sectionIndex = numberOrDefault(bus.sectionIndex + bus.sectionLength, currentSection);
-	var finalIndex = busstops.length - 1;
+	var nextSection, sectionIndex, finalIndex;
+
+	// Guard for an unexpected error
+	// Potential data quality issue
+	if (currentSection === -1) {
+		console.log('fromBusstopPole:' + bus.fromBusstopPole + ' was not found');
+		currentSection = busstops.indexOf(bus.toBusstopPole);
+		if (currentSection === -1) {
+			currentSection = 0;
+		}
+	}
+
+	nextSection = busstops.indexOf(bus.toBusstopPole || bus.fromBusstopPole, currentSection);
+
+	// Guard for an unexpected error
+	// Potential data quality issue
+	if (nextSection === -1) {
+		console.log('toBusstopPole:' + bus.toBusstopPole + ' was not found');
+		nextSection = busstops.indexOf(bus.fromBusstopPole, currentSection);
+		if (nextSection === -1) {
+			nextSection = currentSection;
+		}
+	}
+
+	sectionIndex = numberOrDefault(bus.sectionIndex + bus.sectionLength, currentSection);
+	finalIndex = busstops.length - 1;
 
 	bus.sectionIndex = sectionIndex;
 	bus.sectionLength = (final ? finalIndex : nextSection) - sectionIndex;
