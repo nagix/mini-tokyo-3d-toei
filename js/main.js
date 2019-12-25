@@ -1442,8 +1442,13 @@ map.once('styledata', function () {
 				bus.car.rotation.order = 'ZYX';
 				bus.car.userData.object = bus;
 
-				if (bus.sectionLength > 0) {
-					updateBusProps(bus);
+				updateBusProps(bus);
+				// Sometimes bus.interval becomes 0 because the busroute coordinates
+				// are incorrect and a few busstops shares the same coordinates.
+if (bus.sectionLength > 0 && bus.interval === 0) {
+	console.log(bus.id, bus.fromBusstopPole, bus.toBusstopPole, bus.sectionIndex, bus.sectionLength, bus.feature.properties['busstop-offsets']);
+}
+				if (bus.sectionLength > 0 && bus.interval > 0) {
 					repeat();
 				} else {
 					stand();
@@ -2628,7 +2633,7 @@ function getTimetableFileName() {
 	}
 
 	return 'timetable-' +
-		(JapaneseHolidays.isHoliday(date) || date.getDay() == 6 || date.getDay() == 0 ? 'holiday' : 'weekday') +
+		(JapaneseHolidays.isHoliday(date) || date.getDay() == 0 ? 'holiday' : date.getDay() == 6 ? 'saturday' : 'weekday') +
 		'.json';
 }
 

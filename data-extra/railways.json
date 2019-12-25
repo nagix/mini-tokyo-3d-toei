@@ -49,4 +49,12 @@
 	},
 	"color": "#227324",
 	"carComposition": 5
+}, {
+	"id": "Toei.Arakawa",
+	"title": {
+		"ko": "도쿄 사쿠라 트램 (아라카와 선)",
+		"zh": "东京樱电 (荒川线)"
+	},
+	"color": "#EE86A7",
+	"carComposition": 1
 }]

@@ -23,6 +23,8 @@ var API_URL = 'https://api.odpt.org/api/v4/';
 
 var CALENDARS = [
 	'Weekday',
+	'Saturday',
+	'Holiday',
 	'SaturdayHoliday'
 ];
 
@@ -117,7 +119,9 @@ Promise.all([
 	loadJSON('data-extra/stations.json'),
 	loadJSON('data-extra/station-groups.json'),
 	loadJSON('data-extra/timetable-weekday.json'),
+	loadJSON('data-extra/timetable-saturday.json'),
 	loadJSON('data-extra/timetable-holiday.json'),
+	loadJSON('data-extra/timetable-saturdayholiday.json'),
 	loadJSON('data-extra/rail-directions.json'),
 	loadJSON('data-extra/train-types.json'),
 	loadJSON('data-extra/operators.json'),
@@ -136,7 +140,7 @@ Promise.all([
 	loadBusroutePatternRefData(),
 	loadBusstopPoleRefData()
 ]).then(function([
-	coordinateData, railwayData, stationData, stationGroupData, timetableWeekdayData, timetableHolidayData,
+	coordinateData, railwayData, stationData, stationGroupData, timetableWeekdayData, timetableSaturdayData, timetableHolidayData, timetableSaturdayHolidayData,
 	railDirectionData, trainTypeData, operatorData, airportData, flightStatusData, busroutePatternData, busstopPoleData,
 	railwayRefData, stationRefData, trainTimetableRefData, railDirectionRefData, trainTypeRefData,
 	operatorRefData, airportRefData, flightStatusRefData, busroutePatternRefData, busstopPoleRefData
@@ -213,7 +217,7 @@ stationData.forEach(function(station) {
 // Build station group data
 var nonTransitStations = [];
 stationRefData.forEach(function(station) {
-	if (railwayLookup[station.railway] && station.railway !== 'Toei.Arakawa') { 
+	if (railwayLookup[station.railway]) {
 		nonTransitStations.push(station.id);
 	}
 });
@@ -572,13 +576,24 @@ busroutePatternRefData.filter(function(busroute) {
 var railwayFeatureCollection = turf.featureCollection(railwayFeatureArray);
 
 // Build timetable data
-timetableLookup = buildLookup(concat([trainTimetableRefData.weekday, trainTimetableRefData.holiday]));
+timetableLookup = buildLookup(concat([
+	trainTimetableRefData.weekday,
+	trainTimetableRefData.saturday,
+	trainTimetableRefData.holiday,
+	trainTimetableRefData.saturdayholiday
+]));
 [{
 	data: timetableWeekdayData,
 	refData: trainTimetableRefData.weekday
 }, {
+	data: timetableSaturdayData,
+	refData: trainTimetableRefData.saturday
+}, {
 	data: timetableHolidayData,
 	refData: trainTimetableRefData.holiday
+}, {
+	data: timetableSaturdayHolidayData,
+	refData: trainTimetableRefData.saturdayholiday
 }].forEach(function(tCalendar) {
 	tCalendar.data.forEach(function(timetable) {
 		var id = timetable.id;
@@ -884,16 +899,17 @@ map.once('styledata', function () {
 		eventHandler: function() {
 			exportJSON(turf.truncate(railwayFeatureCollection, {precision: 7}), 'features.json', 0);
 			exportJSON(trainTimetableRefData.weekday, 'timetable-weekday.json', 6000);
-			exportJSON(trainTimetableRefData.holiday, 'timetable-holiday.json', 10000);
-			exportJSON(stationRefData, 'stations.json', 14000);
-			exportJSON(railwayRefData, 'railways.json', 14500);
-			exportJSON(railDirectionRefData, 'rail-directions.json', 15000);
-			exportJSON(trainTypeRefData, 'train-types.json', 15500);
-			exportJSON(operatorRefData, 'operators.json', 16000);
-			exportJSON(airportRefData, 'airports.json', 16500);
-			exportJSON(flightStatusRefData, 'flight-status.json', 17000);
-			exportJSON(busroutePatternRefData, 'busroute-patterns.json', 17500);
-			exportJSON(busstopPoleRefData, 'busstop-poles.json', 18000);
+			exportJSON(trainTimetableRefData.saturdayholiday.concat(trainTimetableRefData.saturday), 'timetable-saturday.json', 9000);
+			exportJSON(trainTimetableRefData.saturdayholiday.concat(trainTimetableRefData.holiday), 'timetable-holiday.json', 12000);
+			exportJSON(stationRefData, 'stations.json', 15000);
+			exportJSON(railwayRefData, 'railways.json', 15500);
+			exportJSON(railDirectionRefData, 'rail-directions.json', 16000);
+			exportJSON(trainTypeRefData, 'train-types.json', 16500);
+			exportJSON(operatorRefData, 'operators.json', 17000);
+			exportJSON(airportRefData, 'airports.json', 17500);
+			exportJSON(flightStatusRefData, 'flight-status.json', 18000);
+			exportJSON(busroutePatternRefData, 'busroute-patterns.json', 18500);
+			exportJSON(busstopPoleRefData, 'busstop-poles.json', 19000);
 		}
 	}]), 'top-right');
 
@@ -1204,7 +1220,9 @@ function loadTrainTimetableRefData() {
 		})).then(function(data) {
 			return {
 				weekday: data[0],
-				holiday: data[1]
+				saturday: data[1],
+				holiday: data[2],
+				saturdayholiday: data[3]
 			};
 		});
 	});

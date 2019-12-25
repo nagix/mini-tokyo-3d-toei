@@ -823,6 +823,186 @@
 		"zh": "见沼代亲水公园"
 	}
 }, {
+	"id": "Toei.Arakawa.Minowabashi",
+	"title": {
+		"ko": "미노와바시",
+		"zh": "三之轮桥"
+	}
+}, {
+	"id": "Toei.Arakawa.ArakawaItchumae",
+	"title": {
+		"ko": "아라카와 제일 중학교 앞",
+		"zh": "荒川一中前"
+	}
+}, {
+	"id": "Toei.Arakawa.Arakawakuyakushomae",
+	"title": {
+		"ko": "아라카와 구청 앞",
+		"zh": "荒川区役所前"
+	}
+}, {
+	"id": "Toei.Arakawa.ArakawaNichome",
+	"title": {
+		"ko": "아라카와 2초메",
+		"zh": "荒川二丁目"
+	}
+}, {
+	"id": "Toei.Arakawa.ArakawaNanachome",
+	"title": {
+		"ko": "아라카와 7초메",
+		"zh": "荒川七丁目"
+	}
+}, {
+	"id": "Toei.Arakawa.MachiyaEkimae",
+	"title": {
+		"ko": "마치야 역 앞",
+		"zh": "町屋站前"
+	}
+}, {
+	"id": "Toei.Arakawa.MachiyaNichome",
+	"title": {
+		"ko": "마치야 2초메",
+		"zh": "町屋二丁目"
+	}
+}, {
+	"id": "Toei.Arakawa.HigashiOguSanchome",
+	"title": {
+		"ko": "히가시오구 3초메",
+		"zh": "东尾久三丁目"
+	}
+}, {
+	"id": "Toei.Arakawa.Kumanomae",
+	"title": {
+		"ko": "구마노 앞",
+		"zh": "熊野前"
+	}
+}, {
+	"id": "Toei.Arakawa.Miyanomae",
+	"title": {
+		"ko": "미야노마에",
+		"zh": "宫之前"
+	}
+}, {
+	"id": "Toei.Arakawa.Odai",
+	"title": {
+		"ko": "오다이",
+		"zh": "小台"
+	}
+}, {
+	"id": "Toei.Arakawa.ArakawaYuenchimae",
+	"title": {
+		"ko": "아라카와 유원지 앞",
+		"zh": "荒川游园地前"
+	}
+}, {
+	"id": "Toei.Arakawa.ArakawaShakomae",
+	"title": {
+		"ko": "아라카와 차고 앞",
+		"zh": "荒川车库前"
+	}
+}, {
+	"id": "Toei.Arakawa.Kajiwara",
+	"title": {
+		"ko": "가지와라",
+		"zh": "梶原"
+	}
+}, {
+	"id": "Toei.Arakawa.Sakaecho",
+	"title": {
+		"ko": "사카에초",
+		"zh": "荣町"
+	}
+}, {
+	"id": "Toei.Arakawa.OjiEkimae",
+	"title": {
+		"ko": "오지 역 앞",
+		"zh": "王子站前"
+	}
+}, {
+	"id": "Toei.Arakawa.Asukayama",
+	"title": {
+		"ko": "아스카야마",
+		"zh": "飞鸟山"
+	}
+}, {
+	"id": "Toei.Arakawa.TakinogawaItchome",
+	"title": {
+		"ko": "다키노가와 1초메",
+		"zh": "泷野川一丁目"
+	}
+}, {
+	"id": "Toei.Arakawa.NishigaharaYonchome",
+	"title": {
+		"ko": "니시가하라 4초메",
+		"zh": "西原四丁目"
+	}
+}, {
+	"id": "Toei.Arakawa.ShinKoshinzuka",
+	"title": {
+		"ko": "신코신즈카",
+		"zh": "新庚申冢"
+	}
+}, {
+	"id": "Toei.Arakawa.Koshinzuka",
+	"title": {
+		"ko": "고신즈카",
+		"zh": "庚申冢"
+	}
+}, {
+	"id": "Toei.Arakawa.Sugamoshinden",
+	"title": {
+		"ko": "스가모신덴",
+		"zh": "巢鸭新田"
+	}
+}, {
+	"id": "Toei.Arakawa.OtsukaEkimae",
+	"title": {
+		"ko": "오쓰카 역 앞",
+		"zh": "大冢站前"
+	}
+}, {
+	"id": "Toei.Arakawa.Mukohara",
+	"title": {
+		"ko": "무코하라",
+		"zh": "向原"
+	}
+}, {
+	"id": "Toei.Arakawa.HigashiIkebukuroYonchome",
+	"title": {
+		"ko": "히가시이케부쿠로 4초메",
+		"zh": "东池袋四丁目"
+	}
+}, {
+	"id": "Toei.Arakawa.TodenZoshigaya",
+	"title": {
+		"ko": "도덴 조시가야",
+		"zh": "都电杂司谷"
+	}
+}, {
+	"id": "Toei.Arakawa.Kishibojimmae",
+	"title": {
+		"ko": "기시보진 앞",
+		"zh": "鬼子母神前"
+	}
+}, {
+	"id": "Toei.Arakawa.Gakushuinshita",
+	"title": {
+		"ko": "가쿠슈인시타",
+		"zh": "学习院下"
+	}
+}, {
+	"id": "Toei.Arakawa.Omokagebashi",
+	"title": {
+		"ko": "오모카게바시",
+		"zh": "面影桥"
+	}
+}, {
+	"id": "Toei.Arakawa.Waseda",
+	"title": {
+		"ko": "와세다",
+		"zh": "早稻田"
+	}
+}, {
 	"id": "Keikyu.Main.Shinagawa",
 	"title": {
 		"ja": "品川",

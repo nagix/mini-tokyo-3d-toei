@@ -124,4 +124,28 @@
 	"r": "Toei.NipporiToneri",
 	"direction": -1,
 	"sectionIndex": 6
+}, {
+	"r": "Toei.Arakawa",
+	"direction": 1,
+	"sectionIndex": 0
+}, {
+	"r": "Toei.Arakawa",
+	"direction": 1,
+	"sectionIndex": 10
+}, {
+	"r": "Toei.Arakawa",
+	"direction": 1,
+	"sectionIndex": 20
+}, {
+	"r": "Toei.Arakawa",
+	"direction": -1,
+	"sectionIndex": 29
+}, {
+	"r": "Toei.Arakawa",
+	"direction": -1,
+	"sectionIndex": 19
+}, {
+	"r": "Toei.Arakawa",
+	"direction": -1,
+	"sectionIndex": 9
 }]
