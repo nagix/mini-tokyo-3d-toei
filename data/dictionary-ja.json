@@ -34,6 +34,8 @@
 	"actual-arrival-time": "到着済み",
 	"code-share": "コードシェア",
 	"bus-number": "車両番号",
+	"fcv": "燃料電池車",
+	"ff": "フルフラット",
 	"previous-busstop": "前停留所",
 	"next-busstop": "次停留所",
 

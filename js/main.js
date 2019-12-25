@@ -79,7 +79,15 @@ var OPERATORS_FOR_FLIGHTINFORMATION = [
 	'NAA'
 ];
 
-var FUEL_CELL_BUSES = ['C103', 'C104', 'C105', 'D106', 'D107', 'D108', 'D109', 'D110', 'D111', 'D112', 'D113', 'D114', 'D115', 'D116', 'D117'];
+var FUEL_CELL_BUSES = [
+	'C103', 'C104', 'C105', 'D106', 'D107', 'D108', 'D109', 'D110', 'D111', 'D112',
+	'D113', 'D114', 'D115', 'D116', 'D117'
+];
+var FULL_FLAT_BUSES = [
+	'D901', 'D902', 'D903', 'D904', 'D905', 'D906', 'D907', 'D908', 'D909', 'D910',
+	'D911', 'D912', 'D913', 'D914', 'D915', 'D916', 'D917', 'D918', 'D919', 'D920',
+	'D921', 'D922', 'D923', 'D924', 'D925', 'D926', 'D927', 'D928', 'D929'
+];
 
 var SQRT3 = Math.sqrt(3);
 var DEGREE_TO_RADIAN = Math.PI / 180;
@@ -1437,7 +1445,7 @@ map.once('styledata', function () {
 				}
 
 				activeBusLookup[bus.id] = bus;
-				color = bus.fcv ? '#0099FF' : operatorLookup['Toei'].color;
+				color = bus.fcv ? '#0099FF' : bus.ff ? '#FF9900' : operatorLookup['Toei'].color;
 				bus.car = createCube(.88, 1.76, .88, color);
 				bus.car.rotation.order = 'ZYX';
 				bus.car.userData.object = bus;
@@ -1650,7 +1658,8 @@ if (bus.sectionLength > 0 && bus.interval === 0) {
 			'<strong>' + getLocalizedOperatorTitle('Toei') + '</strong>' +
 			'<br>' + getLocalizedBusroutePatternTitle(bus.busroutePattern) +
 			'<br><strong>' + dict['bus-number'] + ':</strong> ' + bus.busNumber +
-			(bus.fcv ? ' <span class="desc-fcv">燃料電池車</span>' : '') +
+			(bus.fcv ? ' <span class="desc-fcv">' + dict['fcv'] + '</span>' : '') +
+			(bus.ff ? ' <span class="desc-ff">' + dict['ff'] + '</span>' : '') +
 			(bus.fromBusstopPole ?
 				'<br><strong>' + dict['previous-busstop'] + ':</strong> ' + getLocalizedBusstopPoleTitle(bus.fromBusstopPole) +
 			' ' + bus.fromBusstopPoleTime.replace(/.*(\d\d:\d\d:\d\d).*/, '$1') : '') +
@@ -1955,7 +1964,8 @@ if (bus.sectionLength > 0 && bus.interval === 0) {
 						fromBusstopPole: fromBusstopPole,
 						fromBusstopPoleTime: fromBusstopPoleTime,
 						feature: feature,
-						fcv: FUEL_CELL_BUSES.indexOf(busNumber) !== -1
+						fcv: FUEL_CELL_BUSES.indexOf(busNumber) !== -1,
+						ff: FULL_FLAT_BUSES.indexOf(busNumber) !== -1
 					};
 					busQueue.push(activeBus);
 				}

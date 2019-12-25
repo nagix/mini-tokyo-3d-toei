@@ -34,6 +34,8 @@
 	"actual-arrival-time": "실제 도착 시간",
 	"code-share": "공동운항",
 	"bus-number": "차량 번호",
+	"fcv": "연료 전지 차량",
+	"ff": "풀 플랫",
 	"previous-busstop": "이전 정류장",
 	"next-busstop": "다음 정거장",
 

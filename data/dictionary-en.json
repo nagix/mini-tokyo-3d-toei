@@ -34,6 +34,8 @@
 	"actual-arrival-time": "Actual arrival",
 	"code-share": "Code share",
 	"bus-number": "Bus number",
+	"fcv": "Fuel cell",
+	"ff": "Full-flat",
 	"previous-busstop": "Previous stop",
 	"next-busstop": "Next stop",
 

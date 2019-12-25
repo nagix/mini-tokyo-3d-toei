@@ -34,6 +34,8 @@
 	"actual-arrival-time": "เวลาถึง(จริง)",
 	"code-share": "Code share",
 	"bus-number": "หมายเลขรถบัส",
+	"fcv": "เซลล์เชื้อเพลิงรถยนต์",
+	"ff": "เต็มแบน",
 	"previous-busstop": "หยุดก่อนหน้า",
 	"next-busstop": "หยุดถัดไป",
 
