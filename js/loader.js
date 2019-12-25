@@ -508,7 +508,16 @@ var railwayFeatureArray = [];
 
 	busstopPoleRefData.forEach(function(busstop) {
 		var name = busstop.name;
+		var title = busstop.title;
 		var group = busstopGroups[name] = busstopGroups[name] || [];
+
+		railwayFeatureArray.push(turf.point(busstop.coord, {
+			type: 2,
+			name_ja: title.ja,
+			name_en: title.en,
+			name_ko: title.ko,
+			name_zh: title.zh
+		}));
 
 		group.push(busstop.id);
 	});
@@ -835,6 +844,35 @@ map.once('styledata', function () {
 		}, 'building-3d');
 	});
 
+	map.addLayer({
+		id: 'poi-busstops',
+		type: 'symbol',
+		source: {
+			type: 'geojson',
+			data: filterFeatures(railwayFeatureCollection, function(p) {
+				return p.type === 2;
+			})
+		},
+		layout: {
+			'text-field': '{name_' + (lang.match(/ja|ko|zh/) ? lang : 'en') + '}',
+			'text-font': [
+				'Open Sans Bold',
+				'Arial Unicode MS Bold'
+			],
+			'text-max-width': 9,
+			'text-padding': 2,
+			'text-size': 12,
+			'text-anchor': 'bottom',
+			'text-offset': [0, -1]
+		},
+		paint: {
+			'text-color': 'rgba(102,102,102,1)',
+			'text-halo-blur': 0.5,
+			'text-halo-color': 'rgba(255,255,255,1)',
+			'text-halo-width': 1
+		}
+	});
+
 	map.getStyle().layers.filter(function(layer) {
 		return layer.type === 'line' || layer.type.indexOf('fill') === 0;
 	}).forEach(function(layer) {
@@ -875,6 +913,7 @@ map.once('styledata', function () {
 				}
 				map.setPaintProperty(id, item.key, opacity);
 			});
+			map.setLayoutProperty('poi-busstops', 'visibility', isUndergroundVisible ? 'none' : 'visible');
 
 			startAnimation({
 				callback: function(elapsed) {
@@ -1304,11 +1343,12 @@ function loadBusstopPoleRefData() {
 			var operators = busstop['odpt:operator'];
 			return operators.indexOf('odpt.Operator:Toei') !== -1;
 		}).map(function(busstop) {
+			busstop.title.ja = busstop.title.ja.split('(')[0];
 			return {
 				coord: [busstop['geo:long'], busstop['geo:lat']],
 				id: removePrefix(busstop['owl:sameAs']),
 				name: busstop['dc:title'],
-				title: busstop['title']
+				title: busstop.title
 			};
 		});
 	});

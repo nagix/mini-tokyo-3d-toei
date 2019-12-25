@@ -592,6 +592,36 @@ map.once('styledata', function () {
 
 	map.addLayer(rainLayer, 'poi');
 
+	map.addLayer({
+		id: 'poi-busstops',
+		type: 'symbol',
+		source: {
+			type: 'geojson',
+			data: filterFeatures(railwayFeatureCollection, function(p) {
+				return p.type === 2;
+			})
+		},
+		layout: {
+			'text-field': '{name_' + (lang.match(/ja|ko|zh/) ? lang : 'en') + '}',
+			'text-font': [
+				'Open Sans Bold',
+				'Arial Unicode MS Bold'
+			],
+			'text-max-width': 9,
+			'text-padding': 2,
+			'text-size': 12,
+			'text-anchor': 'bottom',
+			'text-offset': [0, -1]
+		},
+		paint: {
+			'text-color': 'rgba(102,102,102,1)',
+			'text-halo-blur': 0.5,
+			'text-halo-color': 'rgba(255,255,255,1)',
+			'text-halo-width': 1
+		},
+		minzoom: 14
+	});
+
 	map.getStyle().layers.filter(function(layer) {
 		return (layer.type === 'background' || layer.type === 'line' || layer.type.indexOf('fill') === 0) &&
 			layer.id.indexOf('-og-') === -1 && layer.id.indexOf('-ug-') === -1;
@@ -750,6 +780,7 @@ map.once('styledata', function () {
 				}
 				map.setPaintProperty(id, item.key, opacity);
 			});
+			map.setLayoutProperty('poi-busstops', 'visibility', isUndergroundVisible ? 'none' : 'visible');
 
 			startAnimation({
 				callback: function(elapsed, duration) {
