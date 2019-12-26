@@ -6,7 +6,7 @@
 
 ![Screenshot](images/screenshot1.jpg)
 
-Mini Tokyo 3D is a real-time 3D map of public transportation in Tokyo. Trains in operation and airplanes that are arriving or departing are represented on a realistic 3D map with smooth animation. This is a “digital twin” that looks exactly like the real world in the digital world.
+Mini Tokyo 3D is a real-time 3D map of public transportation in Tokyo. Trains and buses in operation and airplanes that are arriving or departing are represented on a realistic 3D map with smooth animation. This is a “digital twin” that looks exactly like the real world in the digital world.
 
 Users can freely move around on the 3D map and zoom in on the places they want to see to know the “now” of Tokyo. It can be used in various ways such as looking for the transfer route as a route map, checking the destination town and weather before going out, just watching the way along the railway by automatically tracking a train and judging if you should dash to not miss the final train from the current position of the train.
 
@@ -20,7 +20,7 @@ The features of Mini Tokyo 3D are as follows.
 
 <img src="images/day-night.jpg" width="640">
 
-You can view trains and airplanes that operate according to actual timetables and real-time delay information from your favorite point of view. The color of the scenery changes according to the sunrise and sunset times in Tokyo, and the sunset glow can be seen. In addition, a rain animation based on real-time weather information is displayed, so you can enjoy more realistic scenery.
+You can view trains, buses and airplanes that operate according to actual timetables and real-time delay information from your favorite point of view. The color of the scenery changes according to the sunrise and sunset times in Tokyo, and the sunset glow can be seen. In addition, a rain animation based on real-time weather information is displayed, so you can enjoy more realistic scenery.
 
 ### Easy-To-Read Railroad Map
 
@@ -32,13 +32,13 @@ Mini Tokyo 3D is using the same line colors used in official route maps and guid
 
 <img src="images/performance.jpg" width="537">
 
-Over 1,100 trains run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains and airplanes.
+Over 1,100 trains and buses run at the same time during the rush hour, but with the optimized data structure and processing logic, a very smooth operation animation is realized even on smartphones. Smooth animation of 60 frames per second is used everywhere, including viewpoint movement, switching between overground and underground views, and fading in and out of trains, buses and airplanes.
 
 ### Support for 4 Languages
 
 <img src="images/multilanguage.jpg" width="219">
 
-In addition to Japanese, Mini Tokyo 3D supports English, Chinese and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, airport names and airline names are also multilingualized. For the user interface texts, Thai and Nepali are also supported.
+In addition to Japanese, Mini Tokyo 3D supports English, Chinese and Korean, which are popular with tourists visiting Japan. Not only the user interface texts but also railway names, station names, train types, bus stop names, airport names and airline names are also multilingualized. For the user interface texts, Thai and Nepali are also supported.
 
 ### Train Operation and Display as Close as Possible to Reality
 
@@ -93,9 +93,9 @@ You can also change the rotation and tilt of the map by holding down the Shift k
 
 Click or tap the compass icon button and the bearing will be reset to true north.
 
-### Tracking Trains and Airplanes
+### Tracking Trains, Buses and Airplanes
 
-Clicking or tapping on a train or airplane will turn on [Tracking Mode](#tracking-mode) and the screen will automatically move following the movement of the train or airplane. There are two types of tracking modes, the “Helicopter Tracking Mode” and the “Rear Tracking Mode”, and you can enjoy the scenery along the railway in your favorite tracking mode. When the tracking mode is on, the map panning and rotating operations are disabled (you can zoom in/out and change the tilt). Clicking on a map with no trains or airplanes turns the tracking mode off.
+Clicking or tapping on a train, bus or airplane will turn on [Tracking Mode](#tracking-mode) and the screen will automatically move following the movement of the train, bus or airplane. There are two types of tracking modes, the “Helicopter Tracking Mode” and the “Rear Tracking Mode”, and you can enjoy the scenery along the railway in your favorite tracking mode. When the tracking mode is on, the map panning and rotating operations are disabled (you can zoom in/out and change the tilt). Clicking on a map with no trains, buses or airplanes turns the tracking mode off.
 
 See [here](#tracking-mode) for details on tracking modes.
 
@@ -109,7 +109,7 @@ When [Real-Time Mode](#real-time-mode) is on, the current data and time is displ
 
 <img src="images/train-short.jpg" width="200"> <img src="images/train-long.jpg" width="600">
 
-As you zoom in on the map, you will see a number of connected vehicles based on the actual train vehicle composition. For example, the Yamanote Line has 11 vehicles and the Tokaido Line has 11 or 15 vehicles depending on the train. The number of vehicles is obtained from real-time data.
+As you zoom in on the map, you will see a number of connected vehicles based on the actual train vehicle composition. For example, the Nippori-Toneri Liner has 5 vehicles and the Toei Shinjuku Line has 8 or 10 vehicles depending on the train. The number of vehicles is obtained from real-time data.
 
 **[Updated on December 16, 2019]** As there was a possibility of conflict with existing patents, we disabled displaying of vehicles corresponding to the train vehicle composition.
 
@@ -119,11 +119,11 @@ As you zoom in on the map, you will see a number of connected vehicles based on 
 
 When [Real-Time Mode](#real-time-mode) is on, orange spheres are displayed around trains that are delayed for more than 1 minute. It is easy to see which sections on the map have the delay.
 
-### Displaying Detailed Information on Trains and Airplanes
+### Displaying Detailed Information on Trains, Buses and Airplanes
 
 <img src="images/train-details.jpg" width="216"> <img src="images/flight-details.jpg" width="216">
 
-When [Real-Time Mode](#real-time-mode) is on, place the mouse pointer or tap on the train or airplane to display detailed information about the train or airplane. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
+When [Real-Time Mode](#real-time-mode) is on, place the mouse pointer or tap on the train, bus or airplane to display detailed information about the train, bus or airplane. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Bus details includes bus operator name, destination, bus number, previous bus stop and departure time, next bus stop. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
 
 ### Station Search
 
@@ -153,9 +153,9 @@ When full-screen mode is on, you can cancel full-screen mode by pressing Esc key
 
 Click or tap the eye icon button to turn the underground mode on or off (the icon is in light blue when it is on).
 
-When underground mode is on, the map will turn dark and the overground railways, stations, trains and airplanes will be translucent, while the underground railways, stations and trains will appear brighter.
+When underground mode is on, the map will turn dark and the overground railways, stations, trains, buses and airplanes will be translucent, while the underground railways, stations and trains will appear brighter.
 
-When underground mode is off, the map will return to normal, overground railways, stations, trains and airplanes will be displayed brightly, and underground railways, stations and trains will be translucent.
+When underground mode is off, the map will return to normal, overground railways, stations, trains, buses and airplanes will be displayed brightly, and underground railways, stations and trains will be translucent.
 
 You can also switch modes by clicking or tapping underground trains with underground mode off, or clicking or tapping overground trains with underground mode on. In addition, the mode is automatically switched when the train being tracked enters the underground from the ground or exits from the underground to the ground.
 
@@ -163,9 +163,9 @@ You can also switch modes by clicking or tapping underground trains with undergr
 
 <img src="images/helicopter-tracking.jpg" width="244"> <img src="images/helicopter-icon.jpg" width="50" align="top"> <img src="images/rear-tracking.jpg" width="244"> <img src="images/train-icon.jpg" width="50" align="top">
 
-Click or tap on a train or airplane to turn tracking mode on and the screen will automatically follow the movement of the train or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains or airplanes turns tracking mode off.
+Click or tap on a train, bus or airplane to turn tracking mode on and the screen will automatically follow the movement of the train, bus or airplane (the icon will appear in light blue when it is on). Clicking on a map with no trains, buses or airplanes turns tracking mode off.
 
-The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a 360 degree turn around the target train or airplane. The train icon indicates the “Rear Tracking Mode”, and it tracks the direction of travel from diagonally behind the target train or airplane. Click or tap the icon button to toggle between the “Helicopter Tracking Mode” and the “Rear Tracking Mode”.
+The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a 360 degree turn around the target train, bus or airplane. The train icon indicates the “Rear Tracking Mode”, and it tracks the direction of travel from diagonally behind the target train, bus or airplane. Click or tap the icon button to toggle between the “Helicopter Tracking Mode” and the “Rear Tracking Mode”.
 
 ### Real-Time Mode
 
@@ -173,7 +173,7 @@ The helicopter icon indicates the “Helicopter Tracking Mode”, and it makes a
 
 Click or tap the clock icon button to switch the real-time mode on or off (the icon is in light blue when it is on).
 
-When real-time mode is on, trains and airplanes are displayed on the map according to the actual operation at the current time. Because it uses real-time information, the location on the map will change accordingly if there is a train delay or flight schedule change.
+When real-time mode is on, trains, buses and airplanes are displayed on the map according to the actual operation at the current time. Because it uses real-time information, the location on the map will change accordingly if there is a train and bus delay or flight schedule change.
 
 When the real-time mode is off, you can enjoy the operation of the trains going back and forth on each route as if you were watching the movement of the model trains.
 
@@ -190,6 +190,7 @@ Based on real-time weather information, 8 levels of precipitation intensity are 
 This application uses the following data.
 
 - [Public Transportation Open Data Center](https://www.odpt.org)
+- [Mapbox](https://www.mapbox.com)
 - [OpenStreetMap](https://www.openstreetmap.org)
 - [Japan Meteorological Agency Precipitation Nowcast](https://www.jma.go.jp/en/radnowc/)
 

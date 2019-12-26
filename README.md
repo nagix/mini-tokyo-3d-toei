@@ -45,4 +45,4 @@ The data for this visualization are sourced from [Public Transportation Open Dat
 
 ## License
 
-Mini Tokyo 3D is available under the [Apache license 2.0](opensource.org/licenses/Apache-2.0).
+Mini Tokyo 3D Toei Edition is available under the [Apache license 2.0](opensource.org/licenses/Apache-2.0).
