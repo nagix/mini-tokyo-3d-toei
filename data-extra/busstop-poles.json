@@ -17105,12 +17105,6 @@
 		"zh": "目白站前"
 	}
 }, {
-	"id": "Toei.MejiroStation.1529.3",
-	"title": {
-		"ko": "메지로에키마에",
-		"zh": "目白站前"
-	}
-}, {
 	"id": "Toei.MejiroStation.1529.4",
 	"title": {
 		"ko": "메지로에키마에",
@@ -17118,12 +17112,6 @@
 	}
 }, {
 	"id": "Toei.MejiroStation.1529.5",
-	"title": {
-		"ko": "메지로에키마에",
-		"zh": "目白站前"
-	}
-}, {
-	"id": "Toei.MejiroStation.1529.7",
 	"title": {
 		"ko": "메지로에키마에",
 		"zh": "目白站前"
@@ -22227,17 +22215,5 @@
 	"title": {
 		"ko": "오타시조키타몬니시",
 		"zh": "大田市场北门西"
-	}
-}, {
-	"id": "Toei.NihonJoshiDai.2608.1",
-	"title": {
-		"ko": "니혼조시다이",
-		"zh": "日本女子大"
-	}
-}, {
-	"id": "Toei.NIHONJOSHIDAIMAE.3334.1",
-	"title": {
-		"ko": "니혼조시다이마에",
-		"zh": "日本女子大前"
 	}
 }]

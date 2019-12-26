@@ -118,7 +118,7 @@ var activeBusLookup = {};
 var realtimeBusLookup = {};
 var busQueue = [];
 var animationID = 0;
-var lastStaticUpdate = '2019-12-24 03:03:32';
+var lastStaticUpdate = '2019-12-26 03:08:54';
 var lastDynamicUpdate = {};
 var stationLookup, stationTitleLookup, railwayLookup, railDirectionLookup, trainTypeLookup, trainLookup, operatorLookup, airportLookup, busroutePatternLookup, busstopPoleLookup, a;
 var trackedObject, markedObject, lastTimetableRefresh, lastTrainRefresh, lastBusRefresh, lastFrameRefresh, trackingBaseBearing, viewAnimationID, layerZoom, altitudeUnit, objectUnit, objectScale, carScale, aircraftScale;
