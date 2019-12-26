@@ -1,7 +1,7 @@
 {
 	"loading-failed": "Loading failed. Please reload the page.",
 
-	"station-name": "Station name",
+	"station-name": "Station or bus stop name",
 	"zoom-in": "Zoom in",
 	"zoom-out": "Zoom out",
 	"compass": "Reset bearing to north",

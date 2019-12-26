@@ -61,7 +61,7 @@ The railway network in Tokyo is one of the most complex in the world. Mini Tokyo
 <img src="images/screen.jpg" width="659">
 
 1. **Date and Time**: See [Date and Time](#date-and-time)
-2. **Search Button**: See [Station Search](#station-search)
+2. **Search Button**: See [Station and Bus Stop Search](#station-and-bus-stop-search)
 3. **Navigation Buttons**: See [Zooming-In/Out](#zooming-inout) and [Rotation and Tilting](#rotation-and-tilting)
 4. **Display Mode Switching Buttons**: See [Display Modes](#display-modes)
 5. **Application Information Button**: See [Showing Application Information](#showing-application-information)
@@ -125,11 +125,11 @@ When [Real-Time Mode](#real-time-mode) is on, orange spheres are displayed aroun
 
 When [Real-Time Mode](#real-time-mode) is on, place the mouse pointer or tap on the train, bus or airplane to display detailed information about the train, bus or airplane. Detailed train information includes railway name, train type, destination, train number, previous or standing station and departure time, next station and arrival time, delay time, and operation information. Bus details includes bus operator name, destination, bus number, previous bus stop and departure time, next bus stop. Flight details include airline name, flight number, departure or arrival location, status, departure or arrival time, and code-share information. If there is a train delay or a flight schedule change, the change will be highlighted in orange.
 
-### Station Search
+### Station and Bus Stop Search
 
 <img src="images/station-search.jpg" width="260">
 
-When you click or tap the search icon button, a search window appears and you can enter text. Enter a station name and press Enter key, or click or tap the search icon button to move to the target station on the map. Once you enter a part of the station name, a list of candidates will be displayed. In Japanese, Korean, and Chinese environments, you can also search by English name.
+When you click or tap the search icon button, a search window appears and you can enter text. Enter a station or bus stop name and press Enter key, or click or tap the search icon button to move to the target station or bus stop on the map. Once you enter a part of the station or bus stop name, a list of candidates will be displayed. In Japanese, Korean, and Chinese environments, you can also search by English name.
 
 ### Showing Application Information
 

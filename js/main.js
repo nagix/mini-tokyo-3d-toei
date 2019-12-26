@@ -315,7 +315,7 @@ Promise.all([
 ]).then(function([
 	dict, railwayRefData, stationRefData, railwayFeatureCollection, timetableRefData, trainData,
 	railDirectionRefData, trainTypeRefData, operatorRefData, airportRefData, flightStatusRefData,
-	busroutePatternRefData, busstopPoleRefData, e
+	busroutePatternRefData, busstopPoleRefData, f
 ]) {
 
 mapboxgl.accessToken = 'pk.eyJ1IjoibmFnaXgiLCJhIjoiY2sxaTZxY2gxMDM2MDNjbW5nZ2h4aHB6ZyJ9.npSnxvMC4r5S74l8A9Hrzw';
@@ -684,6 +684,18 @@ map.once('styledata', function () {
 				stationTitleLookup[title.toUpperCase()] = station;
 			}
 		});
+		busstopPoleRefData.forEach(function(busstop) {
+			var title = busstop.title[l];
+			var coord = busstop.coord;
+			var option;
+
+			if (title && !stationTitleLookup[title.toUpperCase()] && coord && coord[0] && coord[1]) {
+				option = document.createElement('option');
+				option.value = title;
+				datalist.appendChild(option);
+				stationTitleLookup[title.toUpperCase()] = busstop;
+			}
+		});
 	});
 	document.body.appendChild(datalist);
 
@@ -1004,7 +1016,7 @@ map.once('styledata', function () {
 		initModelTrains();
 	}
 
-	a = e[0];
+	a = f[0];
 
 	startAnimation({
 		callback: function() {
